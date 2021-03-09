@@ -12,6 +12,8 @@ public class Principal1 {
 			meuCarro.dono.nome = "Joao da Silva";
 			meuCarro.dono.bairro = "Centro";
 			
+			meuCarro.ligar();
+			
 		}
 
 }

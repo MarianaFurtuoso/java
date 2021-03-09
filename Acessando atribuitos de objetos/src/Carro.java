@@ -7,4 +7,8 @@ public class Carro {
 	int anoDeFabricação;
 	
 	Proprietario dono;
+	
+	void ligar() {
+		System.out.println("Ligando carro: " + modelo);
+	}
 }
