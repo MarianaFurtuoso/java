@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="Acessando atribuitos de objetos/src"/>
+	<classpathentry kind="src" path="CalculoDeValorProduto/src"/>
+	<classpathentry kind="src" path="CalculoSalario/src"/>
+	<classpathentry kind="src" path="Exemplos/src"/>
+	<classpathentry kind="src" path="Fundamentos"/>
+	<classpathentry kind="src" path="PasseioDeCachorro/src"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
