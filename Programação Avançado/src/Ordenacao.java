@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class Ordenacao {
 	
 		public static void main(String[] args) throws IOException {
-		Path arquivo = Paths.get("C:\\Users\\maria\\OneDrive\\Documentos\\TESTE.odt");
+		Path arquivo = Paths.get("C:\\Users\\maria\\OneDrive\\Documentos\\lista.txt");
 		
 		
 		List<String> nomes = Files.readAllLines(arquivo);
@@ -21,8 +21,19 @@ public class Ordenacao {
 			Pessoa pessoa = new Pessoa();
 			pessoa.nome = nome;
 			
-			System.out.println("(" + (i +1) + ") " + nome);
+			listaPessoas.adicionar(pessoa);
 		}
+		
+		listaPessoas.ordenacao();
+		
+		List<String> nomesOrdenados = new ArrayList<String>();
+		for(int i = 0; i < listaPessoas.tamanho(); i++) {
+				Pessoa pessoa = listaPessoas.obter(i);
+				nomesOrdenados.add(pessoa.nome);
+		}
+		
+		Path novoArquivo = Paths.get("C:\\Users\\maria\\OneDrive\\Documentos\\lista2.txt");
+		Files.write(novoArquivo, nomesOrdenados);
 }
 
 		

@@ -1,7 +1,9 @@
 
 public class ListaPessoas {
 	
-	Pessoa [] lista = new Pessoa[10];
+	static final int QUANTIDADE_LISTA = 10;
+	
+	Pessoa [] lista = new Pessoa[QUANTIDADE_LISTA];
 	
 	int tamanhoLista = 0;
 	
@@ -14,8 +16,44 @@ public class ListaPessoas {
 		return tamanhoLista;
 	}
 	
+	void adicionar(Pessoa pessoa) {
+		if (tamanhoLista == lista.length) {
+				Pessoa[] novaLista = new Pessoa[QUANTIDADE_LISTA + lista.length];
+				
+				for (int i = 0; i < lista.length; i++) {
+						novaLista[i] = lista[i];
+				}
+				lista = novaLista;
+		}
+		lista[tamanhoLista] = pessoa;
+		
+		tamanhoLista++;
+	}
 	
-	void ordenacao(Pessoa pessoa) {
+	void ordenacao() {
+				for (int i = 1; i < tamanhoLista; i++) {
+			
+			Pessoa pessoaPosicaoBase = lista[i];
+			
+			int indicePosicaoBase = i;
+			
+			while (indicePosicaoBase > 0) {
+					int indicePosicaoAnterior = indicePosicaoBase - 1;
+					Pessoa pessoaPosicaoAnterior = lista[indicePosicaoAnterior];
+					
+					Boolean pessoaPosicaAnteriorVemDepoisDe = pessoaPosicaoAnterior == null
+								|| pessoaPosicaoAnterior.vemDepoisDe(pessoaPosicaoBase);
+					
+					if (pessoaPosicaAnteriorVemDepoisDe) {
+							lista[indicePosicaoBase] = lista[indicePosicaoAnterior]; 
+							
+							indicePosicaoBase--;
+					} else {
+							break;
+					}
+			}
+			lista[indicePosicaoBase] = pessoaPosicaoBase;
+		}
 		
 	}
 
